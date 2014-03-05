@@ -4,7 +4,7 @@ import lxml.html
 # # Read in a page
 html = scraperwiki.scrape("http://smarterer.com/Mrsonord")
 root = lxml.html.fromstring(html)
-for el in root.cssselect("div.unit img", "div.unit a", "div.unit h4"):           
+for el in root.cssselect("div.unit img, div.unit a, div.unit h4"):           
     print el.attrib['src']
     print el.text
 # 
