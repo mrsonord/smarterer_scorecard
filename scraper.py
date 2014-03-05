@@ -1,11 +1,11 @@
-# This is a template for a Python scraper on Morph (https://morph.io)
-# including some code snippets below that you should find helpful
-
-# import scraperwiki
-# import lxml.html
+import scraperwiki
+import lxml.html
 # 
 # # Read in a page
-# html = scraperwiki.scrape("http://foo.com")
+html = scraperwiki.scrape("http://smarterer.com/Mrsonord")
+root = lxml.html.fromstring(html)
+for el in root.cssselect("div.unit img"):           
+    print el.attrib['src']
 # 
 # # Find something on the page using css selectors
 # root = lxml.html.fromstring(html)
@@ -16,8 +16,21 @@
 # 
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
+# PLEASE READ THIS BEFORE EDITING
+#
+# This script generates your email alerts, to tell you when your scrapers
+# are broken or someone has edited them.
+#
+# It works by emailing you the output of this script. If you read the code and
+# know what you're doing, you can customise it, and make it send other emails
+# for other purposes.
 
-# You don't have to do things with the ScraperWiki and lxml libraries. You can use whatever libraries are installed
-# on Morph for Python (https://github.com/openaustralia/morph-docker-python/blob/master/pip_requirements.txt) and all that matters
-# is that your final data is written to an Sqlite database called data.sqlite in the current working directory which
-# has at least a table called data.
+#from html5lib import parse
+#root = parse(content, treebuilder='lxml', namespaceHTMLElements=False)
+
+
+
+
+#print html
+
+
